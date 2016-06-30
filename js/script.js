@@ -1,10 +1,12 @@
 //ASSIGNMENT 4 PRACTICE WITH JAVASCRIPT OOP CONCEPTS 
-syntax for creating a new object
+
+//notes
+/*syntax for creating a new object
 var variableName = new ObjectType(arguments);
 new object using generic Object type
 var car = new Object();
 
-
+*/
 
 
 
@@ -13,7 +15,7 @@ var car = new Object();
 var ANIMAL = ANIMAL || {};
 var cat = new ANIMAL();
 var dog = new ANIMAL();
-create 2 subclasses; cat and dog
+//create 2 subclasses; cat and dog
 */
 
 //STEP 2
@@ -80,37 +82,63 @@ for (var property in myAnimal) {
 */
 
 // THE RECIPE CARD	
-/*
-Create recipe object
-title
-servings
-ingredients []
-public method function print(title, servings, ingredients){
-	console.log(title + ':\n' + servings + ':\n' + 'Ingredients: \n ' + '-' +ingredients[0] + '\n'
-}
 
-*/
+//Create recipe object
+var recipe = {
+	'title' : 'Salsa',
+	'servings' : 5,
+	'ingredients' : ['tomatoes', 'onion', 'cilantro', 'serrano peppers'],
+	'printMe' : function() {return this.title + ":\nServings: " + this.servings + '\n' this.ingredients;}
+};	
+	
+console.log(recipe.printMe());
+
+
+
 
 // THE READING LIST
-
-array of objects:
-books{
-	book1 {
-		title:
-		author:
-		read: boolean
-	}
-	book2 {
-		title:
-		author:
-		read:
-	}
-}
-if (read = true) {
-'You already read ' + title + ' by ' + author + '.'
-} else {
-	'You still need to read ' + title + ' by ' + author + '.'
-}
 /*
+//array of objects:
+var books = [
+	book1 = {
+		'title': 'The Hunger Games',
+		'author': 'Suzanne Collins',
+		'read': true
+	},
+	book2 = {
+		'title': 'Life After Life',
+		'author': 'Kate Atkinson',
+		'read': true
+	},
+	book3 = {
+		'title': 'Your Voice in my Head',
+		'author': 'Emma Forest',
+		'read': true
+	},
+	book4 = {
+		'title': 'The Girl on the Train',
+		'author': 'Paula Hawkins',
+		'read': false
+	},
+	book5 = {
+		'title': 'Gone Girl',
+		'author': 'Gillian Flynn',
+		'read': false
+	}
+];
+function readBooks() {
+	var result = '';
+	
+	for (var i = 0; i < books.length; i++ ) {
+		if (books[i].read === true) {
+			return  'You already read ' + books[i].title + ' by ' + books[i].author + '.';
+		} else {
+			return  'You still need to read ' + books[i].title + ' by ' + books[i].author + '.';
+		}
+	
+	}
+}
+console.log(readBooks());
+
 
 */
